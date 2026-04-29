@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "haiku-forge-ai"
+version = "1.0.0"
+description = "A Singapore Polytechnic ST1507 haiku transformation, generation, and narration CLI."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  { name = "Goh Kun Ming" }
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "bandit[toml]>=1.7.10",
+  "pip-audit>=2.7.3",
+  "pytest>=8.2.0",
+  "pytest-cov>=5.0.0",
+  "ruff>=0.6.0",
+]
+
+[project.scripts]
+haiku-forge = "haiku_forge.main:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q --cov=haiku_forge --cov-report=term-missing"
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["B", "E", "F", "I", "S", "UP", "W"]
+ignore = [
+  "S311", # Randomness is used for creative generation, not security decisions.
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["S101"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+
+[tool.coverage.run]
+branch = true
+source = ["haiku_forge"]
+
+[tool.coverage.report]
+show_missing = true
+skip_empty = true
+
+[tool.bandit]
+skips = ["B311"]
+exclude_dirs = ["tests"]

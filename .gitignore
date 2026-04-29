@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local configuration
+.env
+.env.*
+!.env.example
+
+# Generated project outputs
+outputs/**/*.wav
+outputs/tmp/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
