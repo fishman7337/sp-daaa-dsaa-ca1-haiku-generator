@@ -17,6 +17,7 @@ class KeywordIndex:
             line_idx: Zero-based line index.
             token_idx: Zero-based token index within the line.
             synonyms_list: Replacement words for the token.
+
         """
         self._positions[(line_idx, token_idx)] = synonyms_list
 
@@ -25,5 +26,6 @@ class KeywordIndex:
 
         Yields:
             Tuples in the form ``((line_idx, token_idx), replacement_words)``.
+
         """
         yield from self._positions.items()

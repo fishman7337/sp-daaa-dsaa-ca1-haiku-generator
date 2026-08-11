@@ -81,6 +81,7 @@ class MarkovChainModel:
 
         Args:
             corpus: Haiku lines used to train the model.
+
         """
         for line in corpus:
             words = line.strip().split()
@@ -105,6 +106,7 @@ class MarkovChainModel:
 
         Returns:
             A generated line, or a failure message if generation is unsuccessful.
+
         """
         for _ in range(15):
             line = self._attempt_line(max_syllables, syllable_counter)
@@ -126,6 +128,7 @@ class MarkovChainModel:
 
         Returns:
             A generated line that fits the syllable constraint, or an empty string.
+
         """
         word = random.choice(list(self.model.keys()) + self.fallback_words)
         words = [word]
@@ -161,6 +164,7 @@ class MarkovChainModel:
 
         Returns:
             Lowercase word with common punctuation removed.
+
         """
         return word.lower().strip(".,!?;:\"'")
 
@@ -173,6 +177,7 @@ class MarkovChainModel:
 
         Returns:
             A capitalised line, or an empty string if no words were given.
+
         """
         if not words:
             return ""

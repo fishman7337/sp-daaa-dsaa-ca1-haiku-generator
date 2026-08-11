@@ -25,6 +25,7 @@ class HaikuAudioNarrator:
 
         Args:
             audio_folder: Folder containing one ``.wav`` file per supported word.
+
         """
         self.audio_folder = Path(audio_folder)
 
@@ -36,6 +37,7 @@ class HaikuAudioNarrator:
 
         Returns:
             Full path to the expected ``.wav`` file.
+
         """
         clean_word = word.lower().strip(".,!?;:\"'")
         return self.audio_folder / f"{clean_word}.wav"
@@ -45,6 +47,7 @@ class HaikuAudioNarrator:
 
         Args:
             word: Word to play as audio.
+
         """
         filepath = self._get_wav_path(word)
 
@@ -64,6 +67,7 @@ class HaikuAudioNarrator:
 
         Args:
             haiku_lines: Haiku lines to narrate audibly.
+
         """
         for index, line in enumerate(haiku_lines, start=1):
             print(f"\nLine {index}: {line}")
@@ -79,6 +83,7 @@ class HaikuAudioNarrator:
         Args:
             haiku_lines: Haiku lines to narrate and save.
             output_filename: Desired output filename, with or without ``.wav``.
+
         """
         output_path = Path(output_filename)
         if output_path.suffix.lower() != ".wav":
@@ -116,6 +121,7 @@ class HaikuAudioNarrator:
 
         Returns:
             Paths to existing word-level audio clips, in narration order.
+
         """
         word_paths = []
 

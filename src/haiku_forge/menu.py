@@ -48,6 +48,7 @@ class Menu:
 
         Args:
             options: Dictionary mapping option numbers to their descriptions.
+
         """
         choices = ",".join(str(key) for key in options)
         print(f"\n\nPlease select your choice: ({choices})")
@@ -68,6 +69,7 @@ class Menu:
 
         Returns:
             A validated menu choice selected by the user.
+
         """
         while True:
             choice = input("Enter Choice: ").strip()

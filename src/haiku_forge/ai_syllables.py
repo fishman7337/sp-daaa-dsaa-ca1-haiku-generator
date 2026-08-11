@@ -255,6 +255,7 @@ class SyllableCounter:
 
         Returns:
             Number of syllables in the word.
+
         """
         clean_word = word.lower().strip(".,;:?!\"'")
 

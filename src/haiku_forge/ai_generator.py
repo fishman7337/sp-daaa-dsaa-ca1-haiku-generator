@@ -24,6 +24,7 @@ class AIHaikuGenerator:
 
         Args:
             haiku_lines: Haiku lines used as training data.
+
         """
         self.markov_model.train(haiku_lines)
 
@@ -32,6 +33,7 @@ class AIHaikuGenerator:
 
         Returns:
             The generated haiku lines.
+
         """
         first = self.markov_model.generate_line(5, self.syllable_counter)
         second = self.markov_model.generate_line(7, self.syllable_counter)

@@ -34,6 +34,7 @@ class InputValidator:
 
         Returns:
             The validated response, either ``"y"`` or ``"n"``.
+
         """
         while True:
             response = input(f"\n\n{prompt}").strip().lower()
@@ -51,6 +52,7 @@ class InputValidator:
 
         Returns:
             A valid file path that exists on the system.
+
         """
         while True:
             path = input(f"\n\n{prompt_message}").strip()
@@ -74,6 +76,7 @@ class InputValidator:
 
         Returns:
             A valid folder path that exists on the system.
+
         """
         while True:
             path = input(f"\n\n{prompt_message}").strip()
@@ -99,6 +102,7 @@ class InputValidator:
 
         Returns:
             A valid filename for writing output.
+
         """
         while True:
             output_file = input(f"{prompt_message}").strip()

@@ -15,6 +15,7 @@ class TokenizedLine:
 
         Args:
             raw_line: Single haiku line to tokenise.
+
         """
         self.raw_line = raw_line
         self.tokens: list[tuple[str, str, str]] = []
@@ -31,6 +32,7 @@ class TokenizedLine:
 
         Returns:
             A tuple of ``(prefix, core, suffix)``.
+
         """
         prefix = ""
         core = word
@@ -51,6 +53,7 @@ class TokenizedLine:
 
         Returns:
             Reconstructed line with spacing and punctuation preserved.
+
         """
         return " ".join(f"{prefix}{core}{suffix}" for prefix, core, suffix in self.tokens)
 
@@ -59,6 +62,7 @@ class TokenizedLine:
 
         Returns:
             A new ``TokenizedLine`` with the same raw line and token data.
+
         """
         clone = TokenizedLine(self.raw_line)
         clone.tokens = self.tokens.copy()
