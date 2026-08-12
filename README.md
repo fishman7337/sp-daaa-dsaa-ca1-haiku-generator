@@ -10,6 +10,15 @@ Diploma in Applied AI & Analytics, module ST1507 Data Structure & Algorithm
 (AI), CA1. It was completed by Goh Kun Ming, DAAA student, AY25/26 Year 2
 Semester 1. Lecturer: Liu Zheng.
 
+## Evidence and interpretation
+
+| Evidence-backed measure | Current repository evidence |
+| --- | --- |
+| Poetic constraint | Generation targets the canonical **5–7–5** syllable structure. |
+| Interaction modes | HaikuForge AI implements synonym, Zen, antonym, and batch transformations alongside Markov generation and WAV narration. |
+
+The qualitative outcome is a layered CLI that combines data structures, constrained generation, transformation, and audio output. “HaikuForge AI” is the canonical product name; syllable correctness and runtime complexity are not presented as measured benchmarks.
+
 ## Features
 
 - Transform haiku using synonym, antonym, and shortest-synonym thesaurus files.
@@ -90,3 +99,10 @@ Sample files live in `data/samples` and `data/thesaurus`. Audio clips live in
 The repository keeps the original coursework context and supporting submission
 PDFs under `docs/submission`. Any future reuse should preserve attribution and
 comply with Singapore Polytechnic academic integrity requirements.
+
+## Licensing
+
+This repository currently does not declare a repository-wide software license.
+Copyright therefore remains with the respective authors by default. Obtain
+permission before copying, modifying, or redistributing the code, coursework,
+datasets, audio, or other assets, and preserve all collaborator attribution.

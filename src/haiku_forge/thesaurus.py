@@ -26,6 +26,7 @@ class Thesaurus:
 
         Args:
             file_path: Path to the synonym thesaurus text file.
+
         """
         self.synonyms = FileHandler.load_thesaurus(file_path)
 
@@ -34,6 +35,7 @@ class Thesaurus:
 
         Args:
             file_path: Path to the antonym thesaurus text file.
+
         """
         self.antonyms = FileHandler.load_thesaurus(file_path)
 
@@ -45,6 +47,7 @@ class Thesaurus:
 
         Returns:
             A randomly selected synonym, or ``None`` if the keyword is missing.
+
         """
         synonym_list = self.synonyms.get(word.lower())
         if not synonym_list:
@@ -61,6 +64,7 @@ class Thesaurus:
         Returns:
             A randomly selected shortest synonym, or ``None`` if the keyword is
             missing.
+
         """
         synonym_list = self.synonyms.get(word.lower())
         if not synonym_list:
@@ -82,6 +86,7 @@ class Thesaurus:
 
         Returns:
             A randomly selected antonym, or ``None`` if no match is found.
+
         """
         lookup_word = word_or_synonym.lower()
 

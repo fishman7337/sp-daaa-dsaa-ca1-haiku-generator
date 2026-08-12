@@ -10,19 +10,21 @@ on:
 
 permissions:
   contents: read
-  security-events: write
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   python-security:
+    timeout-minutes: 30
     name: Python security checks
     runs-on: ubuntu-latest
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
-
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
         with:
           python-version: "3.12"
           cache: pip
@@ -39,17 +41,20 @@ jobs:
         run: python -m pip_audit . --skip-editable
 
   codeql:
+    timeout-minutes: 30
     name: CodeQL analysis
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
-
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
       - name: Initialise CodeQL
-        uses: github/codeql-action/init@v3
+        uses: github/codeql-action/init@24c7eb380a2dc368f2d129e4c65e51d172983a1e # v4
         with:
           languages: python
 
       - name: Perform CodeQL analysis
-        uses: github/codeql-action/analyze@v3
+        uses: github/codeql-action/analyze@24c7eb380a2dc368f2d129e4c65e51d172983a1e # v4

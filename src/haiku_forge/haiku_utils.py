@@ -32,6 +32,7 @@ class Haiku:
 
         Returns:
             ``True`` when no line contains a colon; otherwise ``False``.
+
         """
         try:
             with Path(path).open("r", encoding="utf-8") as file:
@@ -47,6 +48,7 @@ class Haiku:
 
         Returns:
             ``True`` when at least one line contains a colon; otherwise ``False``.
+
         """
         try:
             with Path(path).open("r", encoding="utf-8") as file:
@@ -62,6 +64,7 @@ class Haiku:
 
         Returns:
             Valid haiku file path.
+
         """
         while True:
             path = self.validator.prompt_for_existing_file(prompt)
@@ -78,6 +81,7 @@ class Haiku:
 
         Returns:
             Valid thesaurus file path.
+
         """
         while True:
             path = self.validator.prompt_for_existing_file(prompt)
@@ -92,6 +96,7 @@ class Haiku:
         Args:
             haiku_lines: Generated or transformed haiku lines.
             redo_function: Function to call if the user wants another attempt.
+
         """
         self.validator.wait_for_enter()
 
@@ -116,6 +121,7 @@ class Haiku:
         Args:
             title: Banner text shown above the haiku.
             haiku_lines: Lines to display.
+
         """
         print(f"\n\n{title}")
         print("-" * 30)
@@ -127,6 +133,7 @@ class Haiku:
 
         Returns:
             Loaded haiku lines and a thesaurus containing synonyms.
+
         """
         haiku_file = self._prompt_haiku_file(
             "Select the Haiku you want to process\nPlease enter input file: "
@@ -145,6 +152,7 @@ class Haiku:
 
         Returns:
             Loaded haiku lines and a thesaurus containing synonyms and antonyms.
+
         """
         haiku_file = self._prompt_haiku_file(
             "Select the Haiku you want to process\nPlease enter input file: "
@@ -176,6 +184,7 @@ class Haiku:
 
         Returns:
             Processed haiku lines with punctuation and capitalisation preserved.
+
         """
         processed_lines = []
 
@@ -286,6 +295,7 @@ class Haiku:
 
         Returns:
             Keyword index used by batch processing.
+
         """
         keyword_index = KeywordIndex()
 
@@ -312,6 +322,7 @@ class Haiku:
 
         Returns:
             Rendered haiku lines for the permutation.
+
         """
         copied_lines = [line.copy() for line in tokenized_lines]
 

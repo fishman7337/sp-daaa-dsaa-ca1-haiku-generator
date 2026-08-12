@@ -25,6 +25,7 @@ class FileHandler:
 
         Returns:
             A list of haiku lines, each as a separate string.
+
         """
         with Path(filepath).open("r", encoding="utf-8") as file:
             return [line.strip() for line in file]
@@ -39,6 +40,7 @@ class FileHandler:
         Args:
             filepath: Destination path where the haiku will be saved.
             haiku_lines: Lines to write.
+
         """
         path = Path(filepath)
         if path.parent != Path("."):
@@ -61,6 +63,7 @@ class FileHandler:
         Returns:
             A dictionary where each key is a keyword and each value is a list of
             associated words.
+
         """
         thesaurus = {}
 
@@ -85,5 +88,6 @@ class FileHandler:
 
         Args:
             folder_path: Folder path to check or create.
+
         """
         Path(folder_path).mkdir(parents=True, exist_ok=True)
